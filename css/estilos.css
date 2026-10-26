@@ -1,0 +1,290 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f6f8;
+    color: #17212b;
+}
+
+.encabezado {
+    background-color: #17212b;
+    color: white;
+    padding: 24px max(24px, calc((100% - 1120px) / 2));
+}
+
+.logoTexto {
+    color: #f6b51b;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    margin: 0 0 6px;
+}
+
+.encabezado h1 {
+    margin: 0 0 6px;
+    font-size: 30px;
+}
+
+.subtitulo {
+    margin: 0;
+    color: #d7dee5;
+    font-size: 13px;
+}
+
+.contenedorPrincipal, .detalleContenedor {
+    width: min(1120px, calc(100% - 32px));
+    margin: 26px auto 45px;
+}
+
+.barraCatalogo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.barraCatalogo h2 {
+    font-size: 20px;
+    margin: 0;
+}
+
+#buscarProducto {
+    width: 260px;
+    max-width: 100%;
+    padding: 11px 12px;
+    border: 1px solid #d7dde2;
+    border-radius: 6px;
+    background-color: white;
+}
+
+.gridContainer {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.colorDivHijo {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    background-color: white;
+    border: 1px solid #e5e9ed;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px #17212b12;
+    padding-bottom: 12px;
+}
+
+.tamanoImagen {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    padding: 12px;
+    cursor: pointer;
+}
+
+.fondoImagen {
+    background-color: #f0f2f3;
+}
+
+.categoria {
+    color: #7a8791;
+    font-size: 10px;
+    text-transform: uppercase;
+    margin: 12px 12px 8px;
+}
+
+.colorLetraTitulo {
+    color: #17212b;
+    font-size: 14px;
+    line-height: 1.3;
+    font-weight: bold;
+    margin: 0 12px 12px;
+    min-height: 36px;
+}
+
+.datosProducto {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    margin: auto 12px 10px;
+}
+
+.precio {
+    font-size: 13px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.calificacion {
+    color: #b87510;
+    font-size: 12px;
+    margin: 0;
+}
+
+.stock {
+    color: #697784;
+    font-size: 12px;
+    margin: 0 12px 12px;
+}
+
+.boton {
+    display: block;
+    margin: 0 10px;
+    padding: 9px;
+    border-radius: 4px;
+    background-color: #17212b;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.boton:hover {
+    background-color: #344351;
+}
+
+#mensaje {
+    color: #697784;
+}
+
+.volver {
+    display: inline-block;
+    color: #17212b;
+    font-weight: bold;
+    text-decoration: none;
+    margin-bottom: 22px;
+}
+
+.volver:hover {
+    text-decoration: underline;
+}
+
+.detalleProducto {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    background-color: white;
+    border: 1px solid #dfe4e8;
+    border-radius: 10px;
+    overflow: hidden;
+    min-height: 430px;
+}
+
+.detalleImagen {
+    background-color: #f0f2f3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 28px;
+    min-height: 430px;
+}
+
+.detalleImagen img {
+    width: 100%;
+    height: 360px;
+    object-fit: contain;
+}
+
+.detalleInformacion {
+    padding: 34px 38px;
+}
+
+.detalleInformacion .categoria {
+    margin: 0 0 12px;
+    font-size: 12px;
+}
+
+.detalleInformacion h2 {
+    font-size: 30px;
+    margin: 0 0 14px;
+}
+
+.precioDetalle {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0 0 18px;
+}
+
+.descripcion {
+    color: #53616e;
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0 0 24px;
+}
+
+.datosDetalle {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.dato {
+    background-color: #f5f7f8;
+    border-radius: 6px;
+    padding: 13px;
+    overflow-wrap: anywhere;
+}
+
+.dato p {
+    margin: 0;
+    font-weight: bold;
+}
+
+.dato .etiquetaDato {
+    color: #74818b;
+    font-weight: normal;
+    margin-bottom: 5px;
+}
+
+@media (max-width: 900px) {
+    .gridContainer {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 650px) {
+    .barraCatalogo {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    #buscarProducto {
+        width: 100%;
+    }
+
+    .gridContainer {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .tamanoImagen {
+        height: 145px;
+    }
+
+    .detalleProducto {
+        grid-template-columns: 1fr;
+    }
+
+    .detalleImagen {
+        min-height: 260px;
+    }
+
+    .detalleImagen img {
+        height: 230px;
+    }
+
+    .detalleInformacion {
+        padding: 24px;
+    }
+}
+
+@media (max-width: 380px) {
+    .gridContainer {
+        grid-template-columns: 1fr;
+    }
+}

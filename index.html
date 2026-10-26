@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Productos</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <script src="js/script.js"></script>
+    <script src="js/apiproductos.js"></script>
+</head>
+<body>
+    <div class="encabezado">
+        <p class="logoTexto">SHOP API</p>
+        <h1>Catálogo de productos</h1>
+        <p class="subtitulo">Selecciona un producto para consultar su información.</p>
+    </div>
+
+    <div class="contenedorPrincipal">
+        <div class="barraCatalogo">
+            <h2>Productos disponibles</h2>
+            <input type="search" id="buscarProducto" placeholder="Buscar producto...">
+        </div>
+
+        <p id="mensaje"></p>
+        <div class="gridContainer" id="gridContainer"></div>
+    </div>
+
+    <script>
+        extraerProductos();
+
+        document.getElementById("buscarProducto").addEventListener("input", function () {
+            filtrarProductos(this.value);
+        });
+    </script>
+</body>
+</html>
